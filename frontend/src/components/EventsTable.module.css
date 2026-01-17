@@ -1,0 +1,84 @@
+.container {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.heading {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 20px 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 16px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.table th:nth-child(2),
+.table th:nth-child(3) {
+  text-align: right;
+}
+
+.table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.eventType {
+  font-weight: 500;
+  color: #334155;
+}
+
+.count {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.percentage {
+  text-align: right;
+  width: 180px;
+}
+
+.percentageBar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.percentageBar span {
+  min-width: 48px;
+  text-align: right;
+  font-size: 13px;
+  color: #64748b;
+  font-variant-numeric: tabular-nums;
+}
+
+.percentageFill {
+  height: 8px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border-radius: 4px;
+  min-width: 4px;
+  max-width: 100px;
+}

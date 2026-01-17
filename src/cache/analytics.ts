@@ -1,3 +1,18 @@
+/**
+ * Analytics Cache Layer
+ *
+ * Implements cache-aside pattern for analytics summaries.
+ *
+ * Key design: analytics:summary:{from}:{to}
+ * - Uses full ISO timestamps for exact cache hits
+ * - Different date ranges are cached independently
+ *
+ * Failure handling:
+ * - Cache operations are wrapped in try/catch
+ * - Cache failures don't break the application (graceful degradation)
+ * - Errors are logged but requests continue to database
+ */
+
 import { getRedisClient } from './client';
 import { config } from '../config';
 import { AnalyticsSummary } from '../types';

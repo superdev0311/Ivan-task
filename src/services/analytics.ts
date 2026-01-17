@@ -1,3 +1,15 @@
+/**
+ * Analytics Service
+ *
+ * Responsible for aggregating event data from PostgreSQL.
+ * Queries are designed to leverage indexes on created_at and event_type.
+ *
+ * Performance notes:
+ * - Queries run in parallel to reduce total latency
+ * - Raw SQL used for full control over query execution plans
+ * - COUNT(*) leverages index-only scans when possible
+ */
+
 import { query, queryOne } from '../db/client';
 import { AnalyticsSummary } from '../types';
 

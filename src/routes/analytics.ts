@@ -1,3 +1,17 @@
+/**
+ * Analytics API Routes
+ *
+ * GET /api/analytics/summary
+ *
+ * Request flow:
+ * 1. Validate query parameters (from, to)
+ * 2. Check Redis cache for existing result
+ * 3. On cache miss: query PostgreSQL, store result, return
+ * 4. On cache hit: return immediately
+ *
+ * The "cached" field in response helps clients and debugging.
+ */
+
 import { Router, Request, Response, NextFunction } from 'express';
 import { getAnalyticsSummary } from '../services/analytics';
 import { getCachedSummary, setCachedSummary } from '../cache/analytics';
